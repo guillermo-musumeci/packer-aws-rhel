@@ -1,0 +1,28 @@
+{
+  "builders": [{
+    "type": "amazon-ebs",
+    "access_key": "{{user `aws-access-key`}}",
+    "secret_key": "{{user `aws-secret-key`}}",
+    "region": "{{user `aws-region`}}",
+    "instance_type": "{{user `ec2-instance-type`}}",
+    "subnet_id": "{{user `subnet-id`}}",
+    "ssh_username": "ec2-user",
+    "ssh_timeout": "60m",
+    "ami_name": "{{user `ami-name`}}",
+    "source_ami_filter": {
+      "filters": {
+        "virtualization-type": "hvm",
+        "name": "RHEL-8*-x86_64-*",
+        "root-device-type": "ebs"
+      },
+      "owners": ["309956199498"],
+      "most_recent": true
+    }
+  }],
+  "provisioners": [{
+    "type": "shell-local",
+    "inline": [
+      "ifconfig"
+    ]
+  }]
+}
