@@ -1,0 +1,8 @@
+{
+  "aws-access-key": "complete-this",
+  "aws-secret-key": "complete-this",
+  "aws-region": "eu-west-1",
+  "ami-name": "rhel8-test-ami",
+  "ec2-instance-type": "t2.micro"
+  "subnet-id": "subnet-complete-this"
+}
